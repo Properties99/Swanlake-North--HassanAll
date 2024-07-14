@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-H Swan Lake</title>
+    <link rel="stylesheet" href="property-styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectSelect = document.getElementById('project');
+            const detailsDiv = document.getElementById('details');
+            
+            const projectDetails = {
+                'Swan Lake North Coast': '230 Sqm 4Bds Delv.2025 with Roof 158 Dwn 9M Remaining 12 installments 500K Till 29'
+            };
+
+            projectSelect.addEventListener('change', function() {
+                const selectedProject = projectSelect.value;
+
+                if (selectedProject) {
+                    detailsDiv.innerHTML = projectDetails[selectedProject];
+                } else {
+                    detailsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>H-H Swan Lake</h1>
+        <form id="projectForm">
+            <label for="project">Choose Project:</label>
+            <select id="project" required>
+                <option value="">--Choose a project--</option>
+                <option value="Swan Lake North Coast">Swan Lake North Coast</option>
+            </select>
+
+            <label for="details">Details:</label>
+            <div id="details"></div>
+        </form>
+    </div>
+</body>
+</html>
